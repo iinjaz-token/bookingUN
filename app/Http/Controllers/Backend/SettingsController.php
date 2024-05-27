@@ -518,78 +518,6 @@ class SettingsController extends Controller
 			$stripe_data_list['isenable'] = '';
 		}
 		
-		//Paypal
-		$paypal_data = Tp_option::where('option_name', 'paypal')->get();
-		
-		$paypal_id = '';
-		foreach ($paypal_data as $row){
-			$paypal_id = $row->id;
-		}
-		
-		$paypal_data_list = array();
-		if($paypal_id != ''){
-			$paypalData = json_decode($paypal_data);
-			$paypalObj = json_decode($paypalData[0]->option_value);
-			$paypal_data_list['paypal_client_id'] = $paypalObj->paypal_client_id;
-			$paypal_data_list['paypal_secret'] = $paypalObj->paypal_secret;
-			$paypal_data_list['paypal_currency'] = $paypalObj->paypal_currency;
-			$paypal_data_list['ismode_paypal'] = $paypalObj->ismode_paypal;
-			$paypal_data_list['isenable_paypal'] = $paypalObj->isenable_paypal;
-		}else{
-			$paypal_data_list['paypal_client_id'] = '';
-			$paypal_data_list['paypal_secret'] = '';
-			$paypal_data_list['paypal_currency'] = '';
-			$paypal_data_list['ismode_paypal'] = '';
-			$paypal_data_list['isenable_paypal'] = '';
-		}
-
-		//Razorpay
-		$razorpay_data = Tp_option::where('option_name', 'razorpay')->get();
-		
-		$razorpay_id = '';
-		foreach ($razorpay_data as $row){
-			$razorpay_id = $row->id;
-		}
-		
-		$razorpay_data_list = array();
-		if($razorpay_id != ''){
-			$razorpayData = json_decode($razorpay_data);
-			$razorpayObj = json_decode($razorpayData[0]->option_value);
-			$razorpay_data_list['razorpay_key_id'] = $razorpayObj->razorpay_key_id;
-			$razorpay_data_list['razorpay_key_secret'] = $razorpayObj->razorpay_key_secret;
-			$razorpay_data_list['razorpay_currency'] = $razorpayObj->razorpay_currency;
-			$razorpay_data_list['ismode_razorpay'] = $razorpayObj->ismode_razorpay;
-			$razorpay_data_list['isenable_razorpay'] = $razorpayObj->isenable_razorpay;
-		}else{
-			$razorpay_data_list['razorpay_key_id'] = '';
-			$razorpay_data_list['razorpay_key_secret'] = '';
-			$razorpay_data_list['razorpay_currency'] = '';
-			$razorpay_data_list['ismode_razorpay'] = '';
-			$razorpay_data_list['isenable_razorpay'] = '';
-		}
-
-		//Mollie
-		$mollie_data = Tp_option::where('option_name', 'mollie')->get();
-		
-		$mollie_id = '';
-		foreach ($mollie_data as $row){
-			$mollie_id = $row->id;
-		}
-		
-		$mollie_data_list = array();
-		if($mollie_id != ''){
-			$mollieData = json_decode($mollie_data);
-			$mollieObj = json_decode($mollieData[0]->option_value);
-			$mollie_data_list['mollie_api_key'] = $mollieObj->mollie_api_key;
-			$mollie_data_list['mollie_currency'] = $mollieObj->mollie_currency;
-			$mollie_data_list['ismode_mollie'] = $mollieObj->ismode_mollie;
-			$mollie_data_list['isenable_mollie'] = $mollieObj->isenable_mollie;
-		}else{
-			$mollie_data_list['mollie_api_key'] = '';
-			$mollie_data_list['mollie_currency'] = '';
-			$mollie_data_list['ismode_mollie'] = '';
-			$mollie_data_list['isenable_mollie'] = '';
-		}
 
 		//Cash on Delivery (COD)
 		$cod_data = Tp_option::where('option_name', 'cash_on_delivery')->get();
@@ -629,7 +557,7 @@ class SettingsController extends Controller
 			$bank_data_list['isenable'] = '';
 		}
 		
-        return view('backend.payment-methods', compact('stripe_data_list', 'paypal_data_list', 'razorpay_data_list', 'mollie_data_list', 'cod_data_list', 'bank_data_list'));
+        return view('backend.payment-methods', compact('cod_data_list'));
     }
 	
 	//Save data for Stripe

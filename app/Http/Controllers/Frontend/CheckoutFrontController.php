@@ -21,7 +21,7 @@ use PHPMailer\PHPMailer\Exception;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
-use App\Services\PayPalService;
+
 
 use Razorpay\Api\Api;
 
@@ -29,12 +29,6 @@ use Mollie\Laravel\Facades\Mollie;
 
 class CheckoutFrontController extends Controller
 {
-    protected $PayPalClient;
-
-    public function __construct(PayPalService $PayPalClient)
-    {
-        $this->PayPalClient = $PayPalClient;
-    }
 	
     public function LoadCheckout($id, $title)
     {

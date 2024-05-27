@@ -23,59 +23,10 @@ $(function () {
 		}
     });
 	
-    $("#payment_method_stripe").on("click", function () {
-		$("#pay_paypal").addClass("hideclass");
-		$("#pay_razorpay").addClass("hideclass");
-		$("#pay_mollie").addClass("hideclass");
-		$("#pay_cod").addClass("hideclass");
-		$("#pay_bank").addClass("hideclass");
-		$("#pay_stripe").removeClass("hideclass");
-    });
-	
-    $("#payment_method_paypal").on("click", function () {
-		$("#pay_stripe").addClass("hideclass");
-		$("#pay_razorpay").addClass("hideclass");
-		$("#pay_mollie").addClass("hideclass");
-		$("#pay_cod").addClass("hideclass");
-		$("#pay_bank").addClass("hideclass");
-		$("#pay_paypal").removeClass("hideclass");
-    });
-	
-    $("#payment_method_razorpay").on("click", function () {
-		$("#pay_stripe").addClass("hideclass");
-		$("#pay_paypal").addClass("hideclass");
-		$("#pay_mollie").addClass("hideclass");
-		$("#pay_cod").addClass("hideclass");
-		$("#pay_bank").addClass("hideclass");
-		$("#pay_razorpay").removeClass("hideclass");
-    });
-	
-    $("#payment_method_mollie").on("click", function () {
-		$("#pay_stripe").addClass("hideclass");
-		$("#pay_paypal").addClass("hideclass");
-		$("#pay_razorpay").addClass("hideclass");
-		$("#pay_cod").addClass("hideclass");
-		$("#pay_bank").addClass("hideclass");
-		$("#pay_mollie").removeClass("hideclass");
-    });
-	
     $("#payment_method_cod").on("click", function () {
-		$("#pay_stripe").addClass("hideclass");
-		$("#pay_paypal").addClass("hideclass");
-		$("#pay_razorpay").addClass("hideclass");
-		$("#pay_mollie").addClass("hideclass");
-		$("#pay_bank").addClass("hideclass");
 		$("#pay_cod").removeClass("hideclass");
     });
 	
-    $("#payment_method_bank").on("click", function () {
-		$("#pay_stripe").addClass("hideclass");
-		$("#pay_paypal").addClass("hideclass");
-		$("#pay_razorpay").addClass("hideclass");
-		$("#pay_mollie").addClass("hideclass");
-		$("#pay_cod").addClass("hideclass");
-		$("#pay_bank").removeClass("hideclass");
-    });
 
 	$("#checkout_submit_form").on("click", function () {
 		payment_method = $('input[name="payment_method"]:checked').val();

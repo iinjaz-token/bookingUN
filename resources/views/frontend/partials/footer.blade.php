@@ -26,7 +26,7 @@
                                         </div>
                                         <div class="contact-desc">
                                             <h5>Email</h5>
-                                            <p>info@hotel.com</p>
+                                            <p>info@aub.com</p>
                                         </div>
                                     </div>
                                 </li>
