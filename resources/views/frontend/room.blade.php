@@ -111,15 +111,6 @@
 						</div>
 						<a href="{{ route('frontend.checkout', [$data->id, md5($data->slug)]) }}" class="btn theme-btn booknow-btn">{{ __('Book Now') }}</a>
 					</div>
-					@if($data->description != '')
-					<div class="room-details-card">
-						<h4 class="details-title">{{ __('Description') }}</h4>
-						<div class="entry">
-							@php echo $data->description; @endphp
-						</div>
-					</div>
-					@endif
-					
 					@if($data->amenities != '')
 					<div class="room-details-card">
 						<h4 class="details-title">{{ __('Amenities') }}</h4>
@@ -140,48 +131,6 @@
 						<ul class="details-list">@php echo $data->beds; @endphp</ul>
 					</div>
 					@endif
-				</div>
-				
-				<div class="col-12 col-md-12 col-lg-4">
-					<div class="sidebar">
-						@if($gtext['is_publish_contact'] == 1)
-						<div class="widget-card">
-							<div class="widget-title">{{ __('Contact') }}</div>
-							<div class="widget-body">
-								<p>{{ __('If you need any help, feel free to contact us.') }}</p>
-								
-								@if($gtext['phone_footer'] != '')
-								<p><strong>{{ __('Phone') }}:</strong> {{ $gtext['phone_footer'] }}</p>
-								@endif
-								
-								@if($gtext['email_footer'] != '')
-								<p><strong>{{ __('Email') }}:</strong> {{ $gtext['email_footer'] }}</p>
-								@endif
-								
-								@if($gtext['address_footer'] != '')
-								<p class="mb0"><strong>{{ __('Address') }}:</strong> {{ $gtext['address_footer'] }}</p>
-								@endif
-							</div>	
-						</div>
-						@endif
-						
-						@if(count($room_images)>0)
-						<div class="widget-card">
-							<div class="widget-title">Gallery View</div>
-							<div class="widget-body">
-								<ul class="gallery-card room_gallery_view">
-								@foreach ($room_images as $key => $row)
-									<li>
-										<a href="{{ asset('public/media/'.$row->thumbnail) }}">
-											<img src="{{ asset('public/media/'.$row->thumbnail) }}" alt="{{ $key }}" />
-										</a>
-									</li>
-								@endforeach
-								</ul>
-							</div>	
-						</div>
-						@endif
-					</div>
 				</div>
 			</div>
 		</div>
