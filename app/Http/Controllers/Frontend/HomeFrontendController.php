@@ -9,8 +9,6 @@ use App\Models\Slider;
 use App\Models\Section_content;
 use App\Models\Section_manage;
 use App\Models\Tp_option;
-use App\Models\Offer_ad;
-
 class HomeFrontendController extends Controller
 {
 	//Get Frontend Data
@@ -32,15 +30,6 @@ class HomeFrontendController extends Controller
 				$slider_hero_section = json_decode(json_encode($slider_hero_array));
 			}
 			
-
-			//Offer & Ads Section
-			$offer_ads_section = Section_manage::where('manage_type', '=', 'home_1')->where('section', '=', 'offer_ads')->where('is_publish', '=', 1)->first();
-			if($offer_ads_section ==''){
-				$offer_ads_array =  array();
-				$offer_ads_array['image'] = '';
-				$offer_ads_array['is_publish'] = 2;
-				$offer_ads_section = json_decode(json_encode($offer_ads_array));
-			}
 			
 			//Featured Rooms Section
 			$featured_rooms_section = Section_manage::where('manage_type', '=', 'home_1')->where('section', '=', 'featured_rooms')->where('is_publish', '=', 1)->first();
@@ -64,9 +53,6 @@ class HomeFrontendController extends Controller
 			//Slider
 			$slider = Slider::where('slider_type', '=', 'home_1')->where('is_publish', '=', 1)->orderBy('id', 'desc')->limit(1)->get();
 			
-
-			//Offer & Ads
-			$OfferAds = Offer_ad::where('offer_ad_type', '=', 'homepage1')->where('is_publish', '=', 1)->orderBy('id', 'asc')->get();
 
 			//Featured Rooms
 			$featured_rooms = DB::table('rooms')
@@ -126,13 +112,9 @@ class HomeFrontendController extends Controller
 		
         return view('frontend.home', compact(
 			'slider_hero_section',
-			'offer_ads_section',
 			'featured_rooms_section',
-			'testimonial_section',
 			'slider',
-			'OfferAds',
 			'featured_rooms',
-			'home_video',
 			'testimonial'
 		));
     }
