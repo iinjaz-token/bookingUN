@@ -38,19 +38,6 @@
 							</div>
 						</div>
 						<!--/Upload Form-->
-						<!--Media Toolbar-->
-						<div class="media-toolbar">
-							<div class="row">
-								<div class="col-lg-8"></div>
-								<div class="col-lg-4">
-									<div class="form-group media-filter">
-										<input id="search" name="search" type="text" class="form-control" placeholder="{{ __('Search') }}...">
-										<button type="submit" onClick="onMediaSearch()" class="btn media-search-btn">{{ __('Search') }}</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!--/Media Toolbar-->
 						<!--Data grid-->
 						<div id="list-panel">
 							<div id="media_datalist">

@@ -31,18 +31,6 @@
 						<div class="row mb-10">
 							<div class="col-lg-3">
 								<div class="form-group mb-10">
-									<select name="language_code" id="language_code" class="chosen-select form-control">
-										<option value="0" selected="selected">{{ __('All Language') }}</option>
-										@foreach($languageslist as $row)
-											<option value="{{ $row->language_code }}">
-												{{ $row->language_name }}
-											</option>
-										@endforeach
-									</select>
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="form-group mb-10">
 									<select name="category_id" id="category_id" class="chosen-select form-control">
 										<option value="0" selected="selected">{{ __('All Category') }}</option>
 										@foreach($categorylist as $row)

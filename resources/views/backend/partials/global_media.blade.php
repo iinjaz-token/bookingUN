@@ -22,12 +22,6 @@
 												<a onClick="onUploadListPanel()" href="javascript:void(0);" class="btn warning-btn up-btn-list float-left media-btn dnone"><i class="fa fa-reply"></i> {{ __('Back') }}</a>
 											</div>
 										</div>
-										<div class="col-lg-4">
-											<div class="form-group media-filter">
-												<input id="global_media_search" name="global_media_search" type="text" class="form-control" placeholder="Search...">
-												<button type="submit" onClick="onGlobalMediaSearch()" class="btn media-search-btn">Search</button>
-											</div>
-										</div>
 									</div>
 								</div>
 								<!--/Media Toolbar-->
