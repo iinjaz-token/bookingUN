@@ -1,6 +1,6 @@
 @extends('layouts.backend')
 
-@section('title', __('Discount Manage'))
+@section('title', __('Price'))
 
 @section('content')
 <!-- main Section -->
@@ -16,7 +16,7 @@
 					<div class="card-header">
 						<div class="row">
 							<div class="col-lg-6">
-								{{ __('Discount Manage') }}
+								{{ __('Price') }}
 							</div>
 							<div class="col-lg-6">
 								<div class="float-right">
@@ -35,22 +35,6 @@
 										<div class="form-group">
 											<label for="price">{{ __('Price') }}<span class="red">*</span></label>
 											<input value="{{ $datalist['price'] }}" name="price" id="price" type="text" class="form-control parsley-validated" data-required="true">
-										</div>
-									</div>
-									<div class="col-lg-4">
-										<div class="form-group">
-											<label for="old_price">{{ __('Old Price') }}</label>
-											<input value="{{ $datalist['old_price'] }}" name="old_price" id="old_price" type="text" class="form-control">
-										</div>
-									</div>
-									
-									<div class="col-lg-4">
-										<div class="form-group">
-											<label for="is_discount">{{ __('Discount') }}</label>
-											<select name="is_discount" id="is_discount" class="chosen-select form-control">
-												<option {{ 1 == $datalist['is_discount'] ? "selected=selected" : '' }} value="1">{{ __('YES') }}</option>
-												<option {{ 0 == $datalist['is_discount'] ? "selected=selected" : '' }} value="0">{{ __('NO') }}</option>
-											</select>
 										</div>
 									</div>
 								</div>

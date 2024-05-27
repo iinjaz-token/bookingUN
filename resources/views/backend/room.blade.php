@@ -44,14 +44,6 @@
 										</div>
 									</div>
 								</div>
-								<div class="row">	
-									<div class="col-lg-12">
-										<div class="form-group tpeditor">
-											<label for="description">{{ __('Description') }}</label>
-											<textarea name="description" id="description" class="form-control" rows="4">{{ $datalist['description'] }}</textarea>
-										</div>
-									</div>
-								</div>
 								<div class="row">
 									<div class="col-lg-6">
 										<div class="form-group">
