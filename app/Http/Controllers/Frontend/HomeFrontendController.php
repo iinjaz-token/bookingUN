@@ -51,14 +51,6 @@ class HomeFrontendController extends Controller
 				$featured_rooms_section = json_decode(json_encode($featured_rooms_array));
 			}
 			
-			//Our Services Section
-			$our_services_section = Section_manage::where('manage_type', '=', 'home_1')->where('section', '=', 'our_services')->where('is_publish', '=', 1)->first();
-			if($our_services_section ==''){
-				$our_services_array =  array();
-				$our_services_array['image'] = '';
-				$our_services_array['is_publish'] = 2;
-				$our_services_section = json_decode(json_encode($our_services_array));
-			}
 			
 			//Testimonial Section
 			$testimonial_section = Section_manage::where('manage_type', '=', 'home_1')->where('section', '=', 'testimonial')->where('is_publish', '=', 1)->first();
@@ -87,9 +79,6 @@ class HomeFrontendController extends Controller
 				->limit(6)
 				->get();
 				
-			//Our Services
-			$our_services = Section_content::where('section_type', '=', 'our_services')->where('is_publish', '=', 1)->get();
-			
 			//Home Video Section
 			$hv_data = Tp_option::where('option_name', 'home-video')->get();
 			$id_home_video = '';
@@ -139,12 +128,10 @@ class HomeFrontendController extends Controller
 			'slider_hero_section',
 			'offer_ads_section',
 			'featured_rooms_section',
-			'our_services_section',
 			'testimonial_section',
 			'slider',
 			'OfferAds',
 			'featured_rooms',
-			'our_services',
 			'home_video',
 			'testimonial'
 		));

@@ -244,15 +244,6 @@ Route::prefix('backend')->group(function(){
 	Route::post('/deleteSlider', [App\Http\Controllers\Backend\HomeSliderController::class, 'deleteSlider'])->name('backend.deleteSlider')->middleware(['auth','is_admin']);
 	Route::post('/bulkActionSlider', [App\Http\Controllers\Backend\HomeSliderController::class, 'bulkActionSlider'])->name('backend.bulkActionSlider')->middleware(['auth','is_admin']);
 
-
-	//Our Services
-	Route::get('/our-services', [App\Http\Controllers\Backend\OurServicesController::class, 'getOurServicesPageLoad'])->name('backend.our-services')->middleware(['auth','is_admin']);
-	Route::get('/getOurServicesTableData', [App\Http\Controllers\Backend\OurServicesController::class, 'getOurServicesTableData'])->name('backend.getOurServicesTableData')->middleware(['auth','is_admin']);
-	Route::post('/saveOurServicesData', [App\Http\Controllers\Backend\OurServicesController::class, 'saveOurServicesData'])->name('backend.saveOurServicesData')->middleware(['auth','is_admin']);
-	Route::post('/getOurServicesById', [App\Http\Controllers\Backend\OurServicesController::class, 'getOurServicesById'])->name('backend.getOurServicesById')->middleware(['auth','is_admin']);
-	Route::post('/deleteOurService', [App\Http\Controllers\Backend\OurServicesController::class, 'deleteOurService'])->name('backend.deleteOurService')->middleware(['auth','is_admin']);
-	Route::post('/bulkActionOurServices', [App\Http\Controllers\Backend\OurServicesController::class, 'bulkActionOurServices'])->name('backend.bulkActionOurServices')->middleware(['auth','is_admin']);
-
 	//Countries
 	Route::get('/countries', [App\Http\Controllers\Backend\CountriesController::class, 'getCountriesPageLoad'])->name('backend.countries')->middleware(['auth','is_admin']);
 	Route::get('/getCountriesTableData', [App\Http\Controllers\Backend\CountriesController::class, 'getCountriesTableData'])->name('backend.getCountriesTableData')->middleware(['auth','is_admin']);

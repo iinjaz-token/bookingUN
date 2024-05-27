@@ -85,34 +85,4 @@
 	@endif
 	<!-- /Featured Section/ -->
 
-	<!-- Services Section/ -->
-	@if($our_services_section->is_publish == 1)
-	<section class="section service-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 offset-md-2">
-					<div class="section-heading">
-						<h5>{{ __('Our Services') }}</h5>
-						<h2>{{ $our_services_section->title }}</h2>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				@foreach ($our_services as $row)
-				<div class="col-12 col-md-6 col-lg-4">
-					<div class="service-card">
-						<div class="service-icon">
-							<img src="{{ asset('public/media/'.$row->image) }}" alt="{{ $row->title }}" />
-						</div>
-						<h4>{{ $row->title }}</h4>
-						<p>{{ $row->desc }}</p>
-					</div>
-				</div>
-				@endforeach
-			</div>
-		</div>
-	</section>
-	@endif
-	<!-- /Services Section/ -->
-
 </main>

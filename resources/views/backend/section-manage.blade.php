@@ -83,7 +83,6 @@
 										<select name="section" id="section" class="chosen-select form-control">
 											<option value="slider_hero">Slider/Hero</option>
 											<option value="featured_rooms">Featured Rooms</option>
-											<option value="our_services">Our Services</option>
 										</select>
 									</div>
 								</div>
