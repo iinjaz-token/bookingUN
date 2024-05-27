@@ -29,22 +29,6 @@
 
 					<!--Data grid-->
 					<div id="list-panel" class="card-body">
-						<div class="row mb-10">
-							<div class="col-md-3">
-								<div class="form-group mb-10">
-									<select name="language_code" id="language_code" class="chosen-select form-control">
-										<option value="0" selected="selected">{{ __('All Language') }}</option>
-										@foreach($languageslist as $row)
-											<option value="{{ $row->language_code }}">
-												{{ $row->language_name }}
-											</option>
-										@endforeach
-									</select>
-								</div>
-							</div>
-							<div class="col-md-9"></div>
-						</div>
-						
 						<div class="row">
 							<div class="col-lg-4">
 								<div class="form-group bulk-box">

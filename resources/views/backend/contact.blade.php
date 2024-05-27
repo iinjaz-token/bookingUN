@@ -37,18 +37,6 @@
 								</div>
 								<input type="hidden" id="ViewByPostStatus" value="0"/>
 							</div>
-							<div class="col-lg-3 mb-10">
-								<div class="form-group">
-									<select name="language_code" id="language_code" class="chosen-select form-control">
-										<option value="0" selected="selected">{{ __('All Language') }}</option>
-										@foreach($languageslist as $row)
-											<option value="{{ $row->language_code }}">
-												{{ $row->language_name }}
-											</option>
-										@endforeach
-									</select>
-								</div>
-							</div>
 						</div>
 						<div class="row">
 							<div class="col-lg-4">
